@@ -61,7 +61,7 @@ export = class EWallet {
     channelProperties?: ChannelProperties;
     customerID?: string;
     basket?: object[];
-    metadata?: object[];
+    metadata?: object;
     callbackURL?: string;
   }): Promise<object>;
   getCharges(data: { chargeID: string }): Promise<object>;
