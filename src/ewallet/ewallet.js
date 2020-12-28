@@ -160,6 +160,18 @@ EWallet.prototype.createCharges = function(data) {
       headers['callback-url'] = data.callbackURL;
     }
 
+    let metadata = null;
+    if (data.customerName || data.customerPhoneNumber) {
+      metadata = {};
+
+      if (data.customerName) {
+        metadata.customerName = data.customerName;
+      }
+      if (data.customerPhoneNumber) {
+        metadata.customerPhoneNumber = data.customerPhoneNumber;
+      }
+    }
+
     fetchWithHTTPErr(this.API_CHARGES_ENDPOINT, {
       method: 'POST',
       headers,
@@ -172,7 +184,7 @@ EWallet.prototype.createCharges = function(data) {
         channel_properties: data.channelProperties,
         customer_id: data.customerID,
         basket: data.basket,
-        metadata: data.metadata,
+        metadata: metadata,
       }),
     })
       .then(resolve)
