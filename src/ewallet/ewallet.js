@@ -169,10 +169,10 @@ EWallet.prototype.createCharges = function(data) {
       }
 
       if (data.customerName) {
-        metadata.customerName = data.customerName;
+        metadata.customer_name = data.customerName;
       }
       if (data.customerPhoneNumber) {
-        metadata.customerPhoneNumber = data.customerPhoneNumber;
+        metadata.customer_phone = data.customerPhoneNumber;
       }
     }
 
