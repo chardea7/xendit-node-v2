@@ -162,7 +162,11 @@ EWallet.prototype.createCharges = function(data) {
 
     let metadata = null;
     if (data.customerName || data.customerPhoneNumber) {
-      metadata = {};
+      if (data.metadata) {
+        metadata = { ...data.metadata };
+      } else {
+        metadata = {};
+      }
 
       if (data.customerName) {
         metadata.customerName = data.customerName;

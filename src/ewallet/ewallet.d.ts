@@ -60,6 +60,8 @@ export = class EWallet {
     channelCode: CreateSupportChargesTypes;
     channelProperties?: ChannelProperties;
     customerID?: string;
+    customerName?: string;
+    customerPhoneNumber?: string;
     basket?: object[];
     metadata?: object;
     callbackURL?: string;
