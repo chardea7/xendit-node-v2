@@ -1,4 +1,4 @@
-import { XenditOptions } from '../xendit_opts';
+import {XenditOptions} from '../xendit_opts';
 
 enum CreateSupportWalletTypes {
   OVO = 'OVO',
@@ -13,6 +13,8 @@ enum GetSupportWalletTypes {
 
 enum CreateSupportChargesTypes {
   IdShopeePay = 'ID_SHOPEEPAY',
+  IdOvo = 'ID_OVO',
+  IdDana = 'ID_DANA',
 }
 
 interface PaymentItem {
@@ -27,7 +29,7 @@ interface ChannelProperties {
 }
 
 export = class EWallet {
-  constructor({});
+  constructor({ });
   static _constructorWithInjectedXenditOpts: (
     opts: XenditOptions,
   ) => typeof EWallet;
@@ -66,5 +68,5 @@ export = class EWallet {
     metadata?: object;
     callbackURL?: string;
   }): Promise<object>;
-  getCharges(data: { chargeID: string }): Promise<object>;
+  getCharges(data: {chargeID: string}): Promise<object>;
 };

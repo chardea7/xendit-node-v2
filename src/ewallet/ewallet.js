@@ -33,6 +33,8 @@ EWallet.Type = {
 };
 EWallet.ChargeType = {
   IdShopeePay: 'ID_SHOPEEPAY',
+  IdOvo = 'ID_OVO',
+  IdDana = 'ID_DANA',
 };
 
 EWallet.prototype.createPayment = function(data) {
@@ -133,6 +135,8 @@ EWallet.prototype.createCharges = function(data) {
     if (data.channelCode) {
       switch (data.channelCode) {
         case EWallet.ChargeType.IdShopeePay:
+        case EWallet.ChargeType.IdOvo:
+        case EWallet.ChargeType.IdDana:
           compulsoryFields = [
             'referenceID',
             'currency',
