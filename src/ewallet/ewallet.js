@@ -33,8 +33,8 @@ EWallet.Type = {
 };
 EWallet.ChargeType = {
   IdShopeePay: 'ID_SHOPEEPAY',
-  IdOvo = 'ID_OVO',
-  IdDana = 'ID_DANA',
+  IdOvo: 'ID_OVO',
+  IdDana: 'ID_DANA',
 };
 
 EWallet.prototype.createPayment = function(data) {
