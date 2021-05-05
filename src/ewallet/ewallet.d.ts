@@ -25,7 +25,8 @@ interface PaymentItem {
 }
 
 interface ChannelProperties {
-  success_redirect_url: string;
+  success_redirect_url?: string; // SHOPEEPAY, DANA, LINKAJA
+  mobile_number?: string; // OVO
 }
 
 export = class EWallet {
